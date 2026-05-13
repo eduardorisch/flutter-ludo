@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ludoboardgames/ui/screens/boardgames_screen.dart';
@@ -14,7 +16,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
+      scrollBehavior: MouseScrollBehavior(),
       home: BoardGamesScreen(),
     );
   }
+}
+
+class MouseScrollBehavior extends
+MaterialScrollBehavior {
+@override
+Set<PointerDeviceKind> get dragDevices => {
+ PointerDeviceKind.touch,
+ PointerDeviceKind.mouse,
+ PointerDeviceKind.trackpad,
+ };
 }
