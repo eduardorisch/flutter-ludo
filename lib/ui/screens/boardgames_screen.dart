@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ludoboardgames/model/game_publisher.dart';
 import 'package:ludoboardgames/repository/game_publisher_repository.dart';
+import 'package:ludoboardgames/ui/components/game_publisher_card.dart';
 
 import '../components/ludo_top_app_bar.dart';
 
@@ -50,7 +51,7 @@ class _BoardGamesScreenState extends State<BoardGamesScreen> {
                   separatorBuilder: (_, _) => const SizedBox(width: 16),
                   itemBuilder: (context, index){
                     final publisher = gamesPublisherState[index];
-                    return Chip(label: Text(publisher.name));
+                    return GamePublisherCard(gamePublisher: publisher);
                   },
                 ),
               ),
