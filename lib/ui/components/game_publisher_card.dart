@@ -14,7 +14,7 @@ class GamePublisherCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onClick != null ? () => onClick!(gamePublisher) : null,
+      onTap: onClick != null ? () => onClick!(gamePublisher) : null ,
       child: SizedBox(
         width: 100,
         height: 100,
